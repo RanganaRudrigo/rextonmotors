@@ -11,7 +11,7 @@
     <!-- App title -->
     <title><?= TITLE ?> </title>
 
-    <link href="<?= base_url() ?>media/images/icon.png" rel="icon" type="image/png" sizes="16x16">
+    <link href="<?= base_url() ?>media/images/favicon.png" rel="icon" type="image/png" sizes="16x16">
     <!-- Switchery css -->
     <link href="<?= base_url('assets/plugins/switchery/switchery.min.css') ?>" rel="stylesheet"/>
 

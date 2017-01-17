@@ -216,16 +216,10 @@
                     <div class="col-md-12">
                         <!-- Section: Clients -->
                         <div class="owl-carousel-6col transparent text-center owl-nav-top">
-                            <div class="item"> <a href="#"><img src="<?= base_url('media/images/') ?>brands/brand1.png" alt=""></a></div>
-                            <div class="item"> <a href="#"><img src="<?= base_url('media/images/') ?>brands/brand2.png" alt=""></a></div>
-                            <div class="item"> <a href="#"><img src="<?= base_url('media/images/') ?>brands/brand3.png" alt=""></a></div>
-                            <div class="item"> <a href="#"><img src="<?= base_url('media/images/') ?>brands/brand1.png" alt=""></a></div>
-                            <div class="item"> <a href="#"><img src="<?= base_url('media/images/') ?>brands/brand2.png" alt=""></a></div>
-                            <div class="item"> <a href="#"><img src="<?= base_url('media/images/') ?>brands/brand3.png" alt=""></a></div>
-                            <div class="item"> <a href="#"><img src="<?= base_url('media/images/') ?>brands/brand1.png" alt=""></a></div>
-                            <div class="item"> <a href="#"><img src="<?= base_url('media/images/') ?>brands/brand2.png" alt=""></a></div>
-                            <div class="item"> <a href="#"><img src="<?= base_url('media/images/') ?>brands/brand3.png" alt=""></a></div>
-                            <div class="item"> <a href="#"><img src="<?= base_url('media/images/') ?>brands/brand1.png" alt=""></a></div>
+                            <?php foreach ( $brands as $brand): ?>
+                            <div class="item"> <a href="#"><img src="<?= UP.$brand->Image ?>" alt=""></a></div>
+                            <?php endforeach; ?>
+
                         </div>
                     </div>
                 </div>

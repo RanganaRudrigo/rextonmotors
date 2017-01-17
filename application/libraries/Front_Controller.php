@@ -21,7 +21,7 @@ class Front_Controller extends CI_Controller
     function view($page, $data = [])
     {
         $this->load->model('Brand_model', 'brand');
-        $data['brands'] = $this->brand->order_by("Order", "ASC")->limit(7)->get_all();
+        $data['brands'] = $this->brand->order_by("Order", "ASC")->limit(8)->get_all();
 
         $this->load->model('Events_model', 'event');
         $data['events'] = $this->event->order_by("Order", "ASC")->limit(3)->get_all();
