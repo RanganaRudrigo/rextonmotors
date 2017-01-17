@@ -30,10 +30,10 @@ class Latestnews extends Front_Controller
 //    p($this->db->last_query());
 
 //        ============================================================================
-        $config["base_url"] = base_url() . "Latest-News/";
+        $config["base_url"] = base_url() . "News-Events";
         $config["total_rows"] = $this->news->count_by([]);
 //        p($this->db->last_query());
-        $config["per_page"] = 8;
+        $config["per_page"] = 6;
         $config["uri_segment"] = 2;
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = round($choice);
@@ -57,7 +57,7 @@ class Latestnews extends Front_Controller
         $page = ($this->uri->segment(2)) ? $this->uri->segment(2) : 1;
 
 
-        $d['latast_news'] = $this->news->order_by("Order", "ASC")->limit($config["per_page"], ($page - 1) * 5)->get_all();
+        $d['latast_news'] = $this->news->order_by("Order", "ASC")->limit($config["per_page"], ($page - 1) * 6)->get_all();
 //        $d['projects'] = $this->news->order_by("Order", "ASC")->limit($config["per_page"],($page-1)*8)->get_many_by(['Color'=>'2']);
 
 //        $d["products"] = $this->product->order_by("Order", "ASC")->limit($config["per_page"],($page-1)*16)->get_many_by(['CategoryId'=>$CategoryId]);
@@ -68,7 +68,8 @@ class Latestnews extends Front_Controller
 //        p($this->db->last_query());
 //        p($d['count']);
 
-        $this->view('latest_news', $d);
+//        $this->view('latest_news', $d);
+        $this->view('news_events', $d);
 
 //        $this->load->view('on_project');
 

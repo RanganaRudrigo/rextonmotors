@@ -210,6 +210,20 @@
                     </ul>
                 </li>
 
+
+
+            <li class="has_sub" >
+                <a href="#" class="waves-effect">
+                    <i class="ion ion-android-add-contact"></i>
+                    <span> Services </span> <span
+                        class="menu-arrow"></span> </a>
+                <ul style="">
+                    <li><a href="<?= base_url('admin/service/create') ?>"><span>Create</span></a></li>
+                    <li><a href="<?= base_url('admin/service/') ?>"><span>Manage</span></a></li>
+                    <li><a href="<?= base_url('admin/service/rearrange') ?>"><span>News Re-arrange</span></a></li>
+                </ul>
+            </li>
+
                 <li class="has_sub" style="display: none">
                     <a href="#" class="waves-effect">
                         <i class="ion ion-clipboard"></i>

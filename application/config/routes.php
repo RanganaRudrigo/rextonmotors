@@ -57,7 +57,8 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['About-Us'] = 'Home/about_us';
 $route['Contact-Us'] = 'Home/contact_us';
-$route['Services'] = 'Home/services';
+//$route['Services'] = 'Services/service_index';
+$route['Package-Details/(.+)/(.+)/(:num)'] = 'Home/package_details/$3';
 $route['Packages'] = 'Home/packages';
 $route['IP-Tv'] = 'Home/iptv';
 $route['Package-Details/(.+)/(.+)/(:num)'] = 'Home/package_details/$3';
@@ -70,20 +71,31 @@ $route['Package-Details/(.+)/(.+)/(:num)'] = 'Home/package_details/$3';
 //$route['Community-Members'] = 'Home/member';
 //$route['Recycling'] = 'Home/recycling';
 //$route['Collector-Wanted'] = 'Home/collector_wanted';
+
+//$route['News-Events'] = 'Latestnews/index';
+$route['News-Events'] = 'Latestnews/index';
+$route['News-Events/(.+)'] = 'Latestnews/index/$1';
+$route['News-Event/(.+)/(.+)'] = 'Latestnews/details/$2';
+
 //==================================================================
 
 $route['Products/Search?'] = 'product/index';
 
-$route['Product/(.+)/(.+)/(:num)/(:num)'] = 'product/product_sub_category/$3/$4';
-$route['Product/(.+)/(.+)/(:num)'] = 'product/product_sub_category/$3';
+//$route['Product/(.+)/(.+)/(:num)/(:num)'] = 'product/product_sub_category/$3/$4';
+//$route['Product/(.+)/(.+)/(:num)'] = 'product/product_sub_category/$3';
 
-$route['Products/(.+)/(:num)/(:num)'] = 'product/product_category/$2';
-$route['Products/(.+)/(:num)'] = 'product/product_category/$2';
+//$route['Products/(.+)/(:num)/(:num)'] = 'product/product_category/$2';
+//$route['Products/(.+)/(:num)'] = 'product/product_category/$2';
 
-$route['Product-Details/(.+)/(.+)'] = 'product/detail/$2';
+//$route['Product-Details/(.+)/(.+)'] = 'product/detail/$2';
 
 $route['Products/(:num)'] = 'product/product_index/$1';
 $route['Products'] = 'product/product_index';
+$route['Product-Details/(.+)/(.+)'] = 'product/detail/$2';
+
+$route['Services/(:num)'] = 'Services/service_index/$1';
+$route['Services'] = 'Services/service_index';
+$route['Service-Details/(.+)/(.+)'] = 'Services/detail/$2';
 
 
 //$route['Ongoing-Projects'] = 'Onproject/index';

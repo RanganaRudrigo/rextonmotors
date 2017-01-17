@@ -1,121 +1,200 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html dir="ltr" lang="en">
 <head>
-    <?php $this->view('inc/header_tag.php'); ?>
 
+    <?php $this->view('inc/header_tag_top'); ?>
 </head>
+<body class="boxed-layout pt-20 pb-40 pt-sm-0" data-bg-img="<?= base_url('media/images/') ?>pattern/p13.png">
+<div id="wrapper" class="clearfix">
+    <!-- preloader -->
+    <div id="preloader">
+        <div id="spinner">
+            <img alt="" src="<?= base_url('media/images/') ?>preloaders/10.gif">
+        </div>
+        <div id="disable-preloader" class="btn btn-default btn-sm">Disable Preloader</div>
+    </div>
 
-<body class="res layout-subpage">
-<div id="wrapper" class="wrapper-full ">
-    <!-- Header Container  -->
-    <header id="header" class=" variantleft type_1">
-
-        <?php $this->view('inc/site_header.php'); ?>
+    <!-- Header -->
+    <header id="header" class="header">
+        <?php $this->view('inc/site_header_main'); ?>
     </header>
-    <!-- //Header Container  -->
-    <!-- Main Container  -->
-    <div class="main-container container">
-        <ul class="breadcrumb">
-            <li><a href="<?=base_url('Home') ?>"><i class="fa fa-home"></i></a></li>
-            <li><a href="#">Contact us</a></li>
-        </ul>
 
-        <div class="row">
-            <div id="content" class="col-sm-12">
-                <div class="page-title">
-                    <h2>Contact Us</h2>
-                </div>
+    <!-- Start main-content -->
+    <div class="main-content">
 
-
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.8442639328655!2d-71.10008329902021!3d42.34584359264178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e379f63dc43ccb%3A0xa15d5aa87d0f0c12!2s4+Yawkey+Way%2C+Boston%2C+MA+02215!5e0!3m2!1sen!2s!4v1475081210943" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
-                <div class="info-contact clearfix">
-                    <div class="col-lg-4 col-sm-4 col-xs-12 info-store">
-                        <div class="row">
-                            <div class="name-store">
-                                <h3>Your Store</h3>
-                            </div>
-                            <address>
-                                <div class="address clearfix form-group">
-                                    <div class="icon">
-                                        <i class="fa fa-home"></i>
-                                    </div>
-                                    <div class="text">My Company, 42 avenue des Champs Elysées 75000 Paris France</div>
-                                </div>
-                                <div class="phone form-group">
-                                    <div class="icon">
-                                        <i class="fa fa-phone"></i>
-                                    </div>
-                                    <div class="text">Phone : 0123456789</div>
-                                </div>
-                                <div class="comment">
-                                    Maecenas euismod felis et purus consectetur, quis fermentum velition. Aenean egestas quis turpis vehicula.Maecenas euismod felis et purus consectetur, quis fermentum velition.
-                                    Aenean egestas quis turpis vehicula.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
-                                </div>
-                            </address>
+        <!-- Section: inner-header -->
+        <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="http://placehold.it/1920x1280">
+            <div class="container pt-90 pb-50">
+                <!-- Section Content -->
+                <div class="section-content pt-100">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="title text-white">Contact</h3>
                         </div>
-                    </div>
-                    <div class="col-lg-8 col-sm-8 col-xs-12 contact-form">
-                        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
-                            <fieldset>
-                                <legend>Contact Form</legend>
-                                <h3 class="widgettitle"><?=@$message?></h3>
-                                <div class="form-group required">
-                                    <label class="col-sm-2 control-label" for="input-name">Your Name</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" name="name" value="" id="input-name" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group required">
-                                    <label class="col-sm-2 control-label" for="input-email">E-Mail Address</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" name="email" value="" id="input-email" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group required">
-                                    <label class="col-sm-2 control-label" for="input-enquiry">Enquiry</label>
-                                    <div class="col-sm-10">
-                                        <textarea name="enquiry" rows="10" id="input-enquiry" class="form-control"></textarea>
-                                    </div>
-                                </div>
-                            </fieldset>
-                            <div class="buttons">
-                                <div class="pull-right">
-                                    <button class="btn btn-default buttonGray" type="submit">
-                                        <span>Submit</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Divider: Contact -->
+        <section class="divider">
+            <div class="container">
+                <div class="row pt-30">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="icon-box left media bg-deep p-30 mb-20"> <a class="media-left pull-left" href="#"> <i class="pe-7s-map-2 text-theme-colored"></i></a>
+                                    <div class="media-body"> <strong>OUR OFFICE LOCATION</strong>
+                                        <p>#405, Lan Streen, Los Vegas, USA</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-12">
+                                <div class="icon-box left media bg-deep p-30 mb-20"> <a class="media-left pull-left" href="#"> <i class="pe-7s-call text-theme-colored"></i></a>
+                                    <div class="media-body"> <strong>OUR CONTACT NUMBER</strong>
+                                        <p>+325 12345 65478</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-12">
+                                <div class="icon-box left media bg-deep p-30 mb-20"> <a class="media-left pull-left" href="#"> <i class="pe-7s-mail text-theme-colored"></i></a>
+                                    <div class="media-body"> <strong>OUR CONTACT E-MAIL</strong>
+                                        <p>supporte@yourdomin.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-12">
+                                <div class="icon-box left media bg-deep p-30 mb-20"> <a class="media-left pull-left" href="#"> <i class="pe-7s-film text-theme-colored"></i></a>
+                                    <div class="media-body"> <strong>Make a Video Call</strong>
+                                        <p>ThemeMascotSkype</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <h3 class="line-bottom mt-0 mb-20">Interested in discussing?</h3>
+                        <p class="mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error optio in quia ipsum quae neque alias eligendi, nulla nisi. Veniam ut quis similique culpa natus dolor aliquam officiis ratione libero. Expedita asperiores aliquam provident amet dolores.</p>
+                        <!-- Contact Form -->
+                        <form id="contact_form" name="contact_form" class="" action="includes/sendmail.php" method="post">
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <input name="form_name" class="form-control" type="text" placeholder="Enter Name" required="">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input name="form_subject" class="form-control required" type="text" placeholder="Enter Subject">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input name="form_phone" class="form-control" type="text" placeholder="Enter Phone">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea name="form_message" class="form-control required" rows="5" placeholder="Enter Message"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input name="form_botcheck" class="form-control" type="hidden" value="" />
+                                <button type="submit" class="btn btn-flat btn-theme-colored text-uppercase mt-10 mb-sm-30 border-left-theme-color-2-4px" data-loading-text="Please wait...">Send your message</button>
+                                <button type="reset" class="btn btn-flat btn-theme-colored text-uppercase mt-10 mb-sm-30 border-left-theme-color-2-4px">Reset</button>
+                            </div>
+                        </form>
+
+                        <!-- Contact Form Validation-->
+                        <script type="text/javascript">
+                            $("#contact_form").validate({
+                                submitHandler: function(form) {
+                                    var form_btn = $(form).find('button[type="submit"]');
+                                    var form_result_div = '#form-result';
+                                    $(form_result_div).remove();
+                                    form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+                                    var form_btn_old_msg = form_btn.html();
+                                    form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+                                    $(form).ajaxSubmit({
+                                        dataType:  'json',
+                                        success: function(data) {
+                                            if( data.status == 'true' ) {
+                                                $(form).find('.form-control').val('');
+                                            }
+                                            form_btn.prop('disabled', false).html(form_btn_old_msg);
+                                            $(form_result_div).html(data.message).fadeIn('slow');
+                                            setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
+                                        }
+                                    });
+                                }
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider: Google Map -->
+        <section>
+            <div class="container-fluid pt-0 pb-0">
+                <div class="row">
+
+                    <!-- Google Map HTML Codes -->
+                    <div
+                        data-address="121 King Street, Melbourne Victoria 3000 Australia"
+                        data-popupstring-id="#popupstring1"
+                        class="map-canvas autoload-map"
+                        data-mapstyle="style8"
+                        data-height="400"
+                        data-latlng="-37.817314,144.955431"
+                        data-title="sample title"
+                        data-zoom="12"
+                        data-marker="<?= base_url('media/') ?>images/map-marker.png">
+                    </div>
+                    <div class="map-popupstring hidden" id="popupstring1">
+                        <div class="text-center">
+                            <h3>CharityFund Office</h3>
+                            <p>121 King Street, Melbourne Victoria 3000 Australia</p>
+                        </div>
+                    </div>
+                    <!-- Google Map Javascript Codes -->
+                    <script src="http://maps.google.com/maps/api/js?key=AIzaSyAYWE4mHmR9GyPsHSOVZrSCOOljk8DU9B4"></script>
+                    <script src="<?= base_url('media/') ?>js/google-map-init.js"></script>
+
+                </div>
+            </div>
+        </section>
     </div>
-    <!-- //Main Container -->
+    <!-- end main-content -->
 
+    <!-- Footer -->
+    <footer id="footer" class="footer" data-bg-color="#1f1f1f">
+        <?php $this->view('inc/site_footer_main'); ?>
 
-    <!-- Footer Container -->
-    <footer class="footer-container">
-        <?php $this->view('inc/site_footer.php'); ?>
+        <?php $this->view('inc/site_footer_copyright'); ?>
     </footer>
-    <!-- //end Footer Container -->
+    <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a> </div>
+<!-- end wrapper -->
 
-</div>
+<!-- Footer Scripts -->
+<?php $this->view('inc/footer_js'); ?>
 
-<?php $this->view('inc/right_side_social_bar.php'); ?>
-<link rel='stylesheet' property='stylesheet'  href='<?= base_url('media/css/') ?>cpanel.css' type='text/css' media='all' />
+<script type="text/javascript">
 
-<!-- Preloading Screen -->
-<div id="loader-wrapper">
-    <div id="loader"></div>
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
-</div>
-<!-- End Preloading Screen -->
-
-<?php $this->view('inc/footer_js.php'); ?>
+    window.onload = function()
+    {
+        document.getElementById("contact").className = "active";
+    }
+</script>
 
 </body>
 </html>

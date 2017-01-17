@@ -1,30 +1,17 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: ITMart-6
- * Date: 12/29/2016
- * Time: 2:31 PM
- */
-?>
-<!-- Include Libs & Plugins
-============================================ -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script type="text/javascript" src="<?= base_url('media/js/') ?>jquery-2.2.4.min.js"></script>
-<script type="text/javascript" src="<?= base_url('media/js/') ?>bootstrap.min.js"></script>
-<script type="text/javascript" src="<?= base_url('media/js/') ?>owl.carousel.js"></script>
-<script type="text/javascript" src="<?= base_url('media/js/') ?>libs.js"></script>
-<script type="text/javascript" src="<?= base_url('media/js/') ?>jquery.unveil.js"></script>
-<script type="text/javascript" src="<?= base_url('media/js/') ?>jquery.countdown.min.js"></script>
-<script type="text/javascript" src="<?= base_url('media/js/') ?>jquery.dcjqaccordion.2.8.min.js"></script>
-<script type="text/javascript" src="<?= base_url('media/js/') ?>moment.js"></script>
-<script type="text/javascript" src="<?= base_url('media/js/') ?>bootstrap-datetimepicker.min.js"></script>
-<script type="text/javascript" src="<?= base_url('media/js/') ?>jquery-ui.min.js"></script>
-<script type="text/javascript" src="<?= base_url('media/js/') ?>toppanel.js"></script>
-<script src="<?= base_url('media/js/') ?>all.js"></script>
+<!-- JS | Calendar Event Data -->
+<script src="<?= base_url('media/js/') ?>calendar-events-data.js"></script>
+<!-- JS | Custom script for all pages -->
+<script src="<?= base_url('media/js/') ?>custom.js"></script>
 
-<!-- Theme files
-============================================ -->
-<script type="text/javascript" src="<?= base_url('media/js/') ?>application.js"></script>
-<script type="text/javascript" src="<?= base_url('media/js/') ?>so_megamenu.js"></script>
-<script type="text/javascript" src="<?= base_url('media/js/') ?>addtocart.js"></script>
-<script type="text/javascript" src="<?= base_url('media/js/') ?>cpanel.js"></script>
+<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  
+      (Load Extensions only on Local File Systems ! 
+       The following part can be removed on Server for On Demand Loading) -->
+<script type="text/javascript" src="<?= base_url('media/js/') ?>revolution-slider/js/extensions/revolution.extension.actions.min.js"></script>
+<script type="text/javascript" src="<?= base_url('media/js/') ?>revolution-slider/js/extensions/revolution.extension.carousel.min.js"></script>
+<script type="text/javascript" src="<?= base_url('media/js/') ?>revolution-slider/js/extensions/revolution.extension.kenburn.min.js"></script>
+<script type="text/javascript" src="<?= base_url('media/js/') ?>revolution-slider/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script type="text/javascript" src="<?= base_url('media/js/') ?>revolution-slider/js/extensions/revolution.extension.migration.min.js"></script>
+<script type="text/javascript" src="<?= base_url('media/js/') ?>revolution-slider/js/extensions/revolution.extension.navigation.min.js"></script>
+<script type="text/javascript" src="<?= base_url('media/js/') ?>revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script>
+<script type="text/javascript" src="<?= base_url('media/js/') ?>revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script>
+<script type="text/javascript" src="<?= base_url('media/js/') ?>revolution-slider/js/extensions/revolution.extension.video.min.js"></script>

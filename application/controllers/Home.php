@@ -6,23 +6,12 @@ class Home extends Front_Controller
     function __construct(){
         parent::__construct();
 
-        $this->load->model('Vacancy_model', 'vacancy');
-        $this->load->model('Country_model', 'country');
-        $this->load->model('Data_bank_model', 'data');
+
         $this->load->model('slider_model', 'slider');
-        $this->load->model('Project_model', 'project');
-        $this->load->model('Sri_lanka_News_model', 'slnews');
         $this->load->model('News_model', 'news');
-        $this->load->model('Blog_model', 'blog');
         $this->load->model('Category_model', 'category');
         $this->load->model('Product_model', 'product');
-        $this->load->model('Subcategory_model', 'subcategory');
-        $this->load->model('Media_company_model', 'media');
-        $this->load->model('Packages_model', 'package');
-        $this->load->model('Channel_Tag_model', 'chanellTag');
-        $this->load->model('Channel_model', 'channel');
-        $this->load->model('Iptv_model', 'iptv');
-        $this->load->model('Advertisement_model', 'addz');
+        $this->load->model('Events_model','event');
 
 
     }
@@ -34,90 +23,10 @@ class Home extends Front_Controller
         $d['sliders'] = $this->slider->order_by('Order', 'ASC')->get_all();
 //        $d['related_products'] = $this->product->order_by("Order", "ASC")->limit(6)->get_all();
         $d['related_products'] = $this->product->limit(4)->order_by("ProductId", "DESC")->get_all();
-        $d['home_addz_01'] = $this->addz->limit(1)->order_by("AddId", "DESC")->get_by( 'LocationId=1');
-        $d['home_addz_02'] = $this->addz->limit(1)->order_by("AddId", "DESC")->get_by( 'LocationId=2');
-        $d['home_addz_03'] = $this->addz->limit(1)->order_by("AddId", "DESC")->get_by( 'LocationId=3');
-        $d['home_addz_04'] = $this->addz->limit(1)->order_by("AddId", "DESC")->get_by( 'LocationId=4');
-        $d['home_addz_05'] = $this->addz->limit(1)->order_by("AddId", "DESC")->get_by( 'LocationId=5');
-        $d['home_addz_06'] = $this->addz->limit(1)->order_by("AddId", "DESC")->get_by( 'LocationId=6');
 
 
-//        p($d['mediaCom']);
-//        P($d['sliders']);
-
-        $d['our_product_1'] = $this->category->order_by("Order", "ASC")->limit(3)->get_all();
-//        p($this->db->last_query());
-
-        foreach($d['our_product_1'] as $op1){
-//            $op1->head = $this->category->get($op1->CategoryId);
-//            $op1->product = $this->product->get($op1->CategoryId);
-            $op1->product = $this->db->from('product')
-                ->join('category','category.CategoryId = product.CategoryId')
-                ->select("product.*,category.CategoryTitle")
-                ->where(['product.CategoryId'=>$op1->CategoryId ])->limit(4)->get()->result();
-        }
-
-
-        $d['our_product_2'] = $this->category->order_by("Order", "ASC")->limit(3,3)->get_all();
-//        p($this->db->last_query());
-
-        foreach($d['our_product_2'] as $op2){
-//            $op1->head = $this->category->get($op1->CategoryId);
-//            $op1->product = $this->product->get($op1->CategoryId);
-            $op2->product2 = $this->db->from('product')
-                ->join('category','category.CategoryId = product.CategoryId')
-                ->select("product.*,category.CategoryTitle")
-                ->where(['product.CategoryId'=>$op2->CategoryId ])->limit(4)->get()->result();
-        }
-        $this->view('index', $d);
-
-//        p($d['our_product_2']);
-//        p($this->db->last_query());
-//        exit;
-//        p($this->db->last_query());
-
-//        $this->db->join('category','product.CategoryId=category.CategoryID');
-//        $this->db->select("product.*,category.CategoryTitle");
-//        $d['products'] = $this->product->order_by("Order", "ASC")->limit(4)->order_by('Order','DESC')->get_all();
-//        p($this->db->last_query());
-//        exit;
-
-
-//        $d['srinews'] = $this->slnews->order_by("Order", "ASC")->limit(4)->get_all();
-//        $d['blogs'] = $this->blog->order_by("Order", "ASC")->limit(3)->get_all();
-//        $d['mainnews'] = $this->news->order_by("Order", "ASC")->limit(2)->get_all();
-//        $d['categories'] = $this->category->order_by("Order", "ASC")->limit(6)->get_all();
-//
-//        $this->db->join('brand','product.BrandId=brand.BrandId');
-//        $this->db->join('category','product.CategoryId=category.CategoryID');
-//        $this->db->select("product.*,brand.BrandTitle,category.CategoryTitle");
-//        $d['products'] = $this->product->order_by("Order", "ASC")->limit(15)->order_by('ProductId','DESC')->get_all();
-
-
-//
-//        $this->load->model('event_model','event');
-//        $d['UpcomingEvents'] = $this->event->limit(3)->order_by('EventDate')->get_many_by(
-//          array('EventDate >' => date('Y-m-d'))
-//        );
-//
-//        $this->load->model('gallery_model','gallery');
-//        $d['galleries'] = $this->gallery->limit(12)->order_by('GalleryId','desc')->get_all();
-
-
-
-//        $d['main'] = $this->subcategory->join('category')
-//            ->fields("{$this->subcategory->table()}.* , category.CategoryId,CategoryTitle ")->limit(13)->order_by("Order", "ASC")
-//            ->get_all();
-
-//        p($this->db->last_query());
-
-//        $this->load->model('winners_model','winner');
-//        $d['winners'] = $this->winner->get_all();
-//        p($d['products']);
-//        p($d['main']);
-
-
-//        exit;
+//        $this->view('index', $d);
+        $this->view('index');
 
 
     }
@@ -224,13 +133,13 @@ class Home extends Front_Controller
     {
         $this->view('member');
     }
-//    public function news_events()
-//    {
-//        $this->load->model('Events_model','event');
-//        $d['events'] = $this->event->order_by('Order','ASC')->get_all();
-//
-//        $this->view('news_events',$d);
-//    }
+    /*public function news_events()
+    {
+
+        $d['events'] = $this->event->order_by('Order','ASC')->get_all();
+
+        $this->view('news_events',$d);
+    }*/
     public function price_list()
     {
         $this->view('price_list');
@@ -298,10 +207,10 @@ class Home extends Front_Controller
     }
 
 //    ====================================================================================================
-    public function services()
+   /* public function services()
     {
         $this->view('services');
-    }
+    }*/
     public function ourclients()
     {
         $this->view('client');

@@ -138,7 +138,7 @@ class Product extends Front_Controller
 //    p($this->db->last_query());
 
 //        ============================================================================
-        $config["base_url"] = base_url() . "Products/";
+        $config["base_url"] = base_url() . "Products";
         $config["total_rows"] = $this->product->count_by([]);
 
         $config["per_page"] = 8;
@@ -158,7 +158,9 @@ class Product extends Front_Controller
         $config["prev_tag_close"] ='</li>';
 
 //        $config['next_link'] = 'Next';
+        $config['next_link'] = '<span aria-hidden="true">&raquo;</span>';
 //        $config['prev_link'] = 'Previous';
+        $config['prev_link'] = '<span aria-hidden="true">&laquo;</span>';
 
 
         $this->pagination->initialize($config);
@@ -168,6 +170,8 @@ class Product extends Front_Controller
 //        $this->db->join('brand','product.BrandId=brand.BrandId');
 //        $this->db->join('category','product.CategoryId=category.CategoryID');
 //        $this->db->select("product.*,brand.BrandTitle,category.CategoryTitle");
+
+
         $d['pages']=round($choice);
         $d['products'] = $this->product->order_by("Order", "ASC")->limit($config["per_page"],($page-1)*8)->get_all();
 
@@ -184,6 +188,8 @@ class Product extends Front_Controller
 
 //        $this->view('product',$d);
         $this->view('all_product',$d);
+//        $this->view('all_product');
+
 
 
     }
@@ -311,8 +317,9 @@ class Product extends Front_Controller
         $d['details']=$this->product->join('category')->join('sub_category')
         ->fields("{$this->product->table()}.* , CategoryTitle,SubCategoryTitle ")
         ->get_by(['ProductId' => $ProductId]);
+//        p($this->db->last_query());
 
-        $d['related_products'] = $this->product->limit(5)->order_by('rand()')->get_many_by(['CategoryId' => $d['details']->CategoryId]);
+        $d['related_products'] = $this->product->limit(4)->order_by('rand()')->get_many_by(['CategoryId' => $d['details']->CategoryId]);
 
         $d['one_sub_category'] = $this->subcategory->get($d['details']->SubCategoryId);
         $d['one_category'] = $this->category->get($d['details']->CategoryId);
@@ -321,11 +328,11 @@ class Product extends Front_Controller
 
         $d['main_cate']=' <li><a href="'.base_url('Products/').url_title($d['one_category']->CategoryTitle).'/'.$d['one_category']->CategoryId .'"> '.$d['one_category']->CategoryTitle.' </a></li>';
 
-        if($d['details']->SubCategoryTitle != null){
-            $d['main_cate_sub']=' <li><a href="'.base_url('Product/').url_title($d['one_category']->CategoryTitle).'/'.url_title($d['one_sub_category']->SubCategoryTitle) .'/'.$d['one_sub_category']->SubCategoryId.'"> '.$d['one_sub_category']->SubCategoryTitle.' </a></li>';
-        }else{
-            $d['main_cate_sub']=' ';
-        }
+//        if($d['details']->SubCategoryTitle != null){
+//            $d['main_cate_sub']=' <li><a href="'.base_url('Product/').url_title($d['one_category']->CategoryTitle).'/'.url_title($d['one_sub_category']->SubCategoryTitle) .'/'.$d['one_sub_category']->SubCategoryId.'"> '.$d['one_sub_category']->SubCategoryTitle.' </a></li>';
+//        }else{
+//            $d['main_cate_sub']=' ';
+//        }
 
 
 

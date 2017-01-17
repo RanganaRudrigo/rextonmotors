@@ -1,220 +1,148 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html dir="ltr" lang="en">
 <head>
-
-    <?php $this->view('inc/header_tag.php'); ?>
-
+    <?php $this->view('inc/header_tag_top'); ?>
 </head>
+<body class="boxed-layout pt-20 pb-40 pt-sm-0" data-bg-img="<?= base_url('media/images/') ?>pattern/p13.png">
+<div id="wrapper" class="clearfix">
+    <!-- preloader -->
+    <!--<div id="preloader">
+        <div id="spinner">
+            <img alt="" src="<?/*= base_url('media/images/') */?>preloaders/10.gif">
+        </div>
+        <div id="disable-preloader" class="btn btn-default btn-sm">Disable Preloader</div>
+    </div>-->
 
-<body class="res layout-subpage">
-<div id="wrapper" class="wrapper-full ">
-    <!-- Header Container  -->
-    <header id="header" class=" variantleft type_1">
-        <?php $this->view('inc/site_header.php'); ?>
+    <!-- Header -->
+    <header id="header" class="header">
+        <?php $this->view('inc/site_header_main'); ?>
     </header>
-    <!-- //Header Container  -->
-    <!-- Main Container  -->
-    <div class="main-container container">
-        <ul class="breadcrumb">
-            <li><a href="<?= base_url('Home') ?>"><i class="fa fa-home"></i></a></li>
-            <?= $main_cate ?>
-            <?= $main_cate_sub ?>
-            <li><a ><?= $details->ProductTitle ?></a></li>
 
-        </ul>
+    <!-- Start main-content -->
+    <div class="main-content">
 
+        <!-- Section: inner-header -->
+        <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="http://placehold.it/1920x1280">
+            <div class="container pt-90 pb-50">
+                <!-- Section Content -->
+                <div class="section-content pt-100">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="title text-white">Product Details</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="row">
-            <!--Middle Part Start-->
-            <div id="content" class="col-md-12 col-sm-12">
-
-                <div class="product-view row">
-                    <div class="left-content-product col-lg-10 col-xs-12">
-                        <div class="row">
-                            <div class="content-product-left class-honizol col-sm-6 col-xs-12 ">
-                                <div class="large-image  ">
-                                    <img itemprop="image" class="product-image-zoom" src="<?=UP.$details->Image?>" data-zoom-image="<?=UP.$details->Image?>" >
+        <section>
+            <div class="container">
+                <div class="section-content">
+                    <div class="row">
+                        <div class="product">
+                            <div class="col-md-5">
+                                <div class="product-image">
+                                    <div class="zoom-gallery">
+                                        <a href="<?=UP.$details->Image?>" title="<?= $details->ProductTitle ?>">
+                                            <img src="<?=UP.$details->Image?>" alt="">
+                                        </a>
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="product-summary">
+                                    <h2 class="product-title"><?= $details->ProductTitle ?></h2>
 
-                                <div id="thumb-slider" class="owl-theme owl-loaded owl-drag full_slider">
-                                    <?php $MoreImage = (array) json_decode($details->MoreImage ); ?>
-                                    <?php foreach ( $MoreImage as $img): ?>
-                                    <a data-index="0" class="img thumbnail " data-image="<?= UP. $img ?>" >
-                                        <img src="<?= UPT. $img ?>">
-                                    </a>
+
+                                    <div class="short-description">
+                                        <p>
+                                            <?= $details->ShortDescription ?>
+                                        </p>
+                                    </div>
+<!--                                    <div class="tags"><strong>SKU:</strong> EA34</div>-->
+                                    <div class="category"><strong>Category:</strong> <a> <?= $details->CategoryTitle ?></a></div>
+
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="horizontal-tab product-tab">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active"><a href="#details" data-toggle="tab">Description</a></li>
+                                        <li><a href="#video" data-toggle="tab" style="display: <?= ($details->VideoEmbedCode == '') ? 'none' : ''; ?>">You Tube Video</a></li>
+
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade in active" id="details">
+                                            <p>
+                                                <?= $details->Description ?>
+                                            </p>
+                                        </div>
+                                        <div class="tab-pane fade" id="video">
+                                            <?= $details->VideoEmbedCode ?>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-30">
+                            <h3 class="line-bottom">Related Products</h3>
+                            <div class="row multi-row-clearfix">
+                                <div class="products related">
+                                    <?php foreach ( $related_products as $related_product): ?>
+
+                                    <div class="col-sm-6 col-md-3 col-lg-3 mb-30">
+                                        <div class="product">
+                                            <div class="product-thumb">
+                                                <img alt="" src="<?=UP.$related_product->Image?>" class="img-responsive img-fullwidth">
+                                                <div class="overlay">
+                                                    <div class="btn-product-view-details">
+                                                        <a class="btn btn-default btn-theme-colored btn-sm btn-flat pl-20 pr-20 btn-add-to-cart text-uppercase font-weight-700" href="<?= base_url().'Product-Details/'.url_title($related_product->ProductTitle).'/'.$related_product->ProductId?>">View detail</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-details text-center">
+                                                <a href="<?= base_url().'Product-Details/'.url_title($related_product->ProductTitle).'/'.$related_product->ProductId?>">
+                                                    <h5 class="product-title"> <?= $related_product->ProductTitle ?></h5>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <?php endforeach; ?>
 
 
                                 </div>
-
-                            </div>
-
-                            <div class="content-product-right col-sm-6 col-xs-12">
-                                <div class="title-product">
-                                    <h1><?= $details->ProductTitle ?></h1>
-                                </div>
-                                <!-- Review ---->
-
-
-
-
-                                <div class="product-box-desc">
-                                    <div class="inner-box-desc">
-
-                                        <p>
-                                            <?= $details->ShortDescription ?>
-
-                                        </p>
-                                    </div>
-                                </div>
-
-
-
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <section class="col-lg-2 hidden-sm hidden-md hidden-xs slider-products">
-                        <div class="module col-sm-12 four-block">
-                            <div class="modcontent clearfix">
-                                <div class="policy-detail">
-                                    <div class="banner-policy">
-                                        <div class="policy policy1">
-                                            <a href="#"> <span class="ico-policy">&nbsp;</span>	90 day
-                                                <br> money back </a>
-                                        </div>
-                                        <div class="policy policy2">
-                                            <a href="#"> <span class="ico-policy">&nbsp;</span>	In-store exchange </a>
-                                        </div>
-                                        <div class="policy policy3">
-                                            <a href="#"> <span class="ico-policy">&nbsp;</span>	lowest price guarantee </a>
-                                        </div>
-                                        <div class="policy policy4">
-                                            <a href="#"> <span class="ico-policy">&nbsp;</span>	shopping guarantee </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <!-- Product Tabs -->
-                <div class="producttab ">
-                    <div class="tabsslider  vertical-tabs col-xs-12">
-                        <ul class="nav nav-tabs col-lg-2 col-sm-3">
-                            <li class="active"><a data-toggle="tab" href="#tab-1">Description</a></li>
-                            <li class="item_nonactive"><a data-toggle="tab" href="#tab-review" style="display: <?= ($details->VideoEmbedCode == '') ? 'none' : ''; ?>">You Tube Video</a></li>
-                            <li class="item_nonactive"><a data-toggle="tab" href="#tab-5" style="display: <?= ($details->Document == '') ? 'none' : ''; ?>">Document</a></li>
-                        </ul>
-                        <div class="tab-content col-lg-10 col-sm-9 col-xs-12">
-                            <div id="tab-1" class="tab-pane fade active in">
-                                <p>
-                                    <?= $details->Description ?>
-                                </p>
-
-                            </div>
-                            <div id="tab-review" class="tab-pane fade">
-                                <?= $details->VideoEmbedCode ?>
-                            </div>
-
-                            <div id="tab-5" class="tab-pane fade">
-                                <a href="<?= DOC.$details->Document ?>" target="_blank">
-                                    <img id="detail-icon-img" src="https://cdn1.iconfinder.com/data/icons/CrystalClear/64x64/mimetypes/pdf.png" alt="document, pdf icon" width="64" height="64">
-
-                                </a>
-
-
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- //Product Tabs -->
-
-                <!-- Related Products -->
-                <div class="related titleLine products-list grid module ">
-                    <h3 class="modtitle">Related Products  </h3>
-                    <div class="releate-products ">
-
-                        <?php foreach ( $related_products as $related_product): ?>
-                        <div class="product-layout">
-                            <div class="product-item-container">
-                                <div class="left-block">
-                                    <div class="product-image-container second_img ">
-                                        <img  src="<?=UP.$related_product->Image?>"   class="img-responsive" />
-                                        <img  src="<?=UP.$related_product->Image?>"   class="img_0 img-responsive" />
-                                    </div>
-
-
-                                    <!--end full quick view block-->
-                                </div>
-
-                                <div class="right-block">
-                                    <div class="caption">
-                                        <h4>
-                                            <a href="<?= base_url().'Product-Details/'.url_title($related_product->ProductTitle).'/'.$related_product->ProductId?>">
-                                                <?= $related_product->ProductTitle ?>
-                                            </a>
-                                        </h4>
-                                    </div>
-
-                                    <div class="button-group">
-                                        <a class="addToCart" type="button" data-toggle="tooltip" title="View More" href="<?= base_url().'Product-Details/'.url_title($related_product->ProductTitle).'/'.$related_product->ProductId?>" >
-                                            <i class="fa fa-shopping-cart"></i>
-                                            <span class="hidden-xs">View More</span>
-                                        </a>
-
-                                    </div>
-                                </div><!-- right block -->
-
-                            </div>
-                        </div>
-                        <?php endforeach; ?>
-
-                    </div>
-                </div>
-
-                <!-- end Related  Products-->
-
-
             </div>
-
-
-        </div>
-        <!--Middle Part End-->
+        </section>
     </div>
-    <!-- //Main Container -->
+    <!-- end main-content -->
 
+    <!-- Footer -->
+    <footer id="footer" class="footer" data-bg-color="#1f1f1f">
 
-    <!-- Footer Container -->
-    <footer class="footer-container">
-        <?php $this->view('inc/site_footer.php'); ?>
-
+        <?php $this->view('inc/site_footer_main'); ?>
+        <?php $this->view('inc/site_footer_copyright'); ?>
 
     </footer>
-    <!-- //end Footer Container -->
+    <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a> </div>
+<!-- end wrapper -->
 
-</div>
+<!-- Footer Scripts -->
+<?php $this->view('inc/footer_js'); ?>
+<script type="text/javascript">
 
-
-
-
-
-
-<link rel='stylesheet' property='stylesheet'  href='<?= base_url('media/css/') ?>cpanel.css' type='text/css' media='all' />
-
-
-<!-- Preloading Screen -->
-<div id="loader-wrapper">
-    <div id="loader"></div>
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
-</div>
-<!-- End Preloading Screen -->
-
-<?php $this->view('inc/footer_js.php'); ?>
+    window.onload = function()
+    {
+        document.getElementById("product").className = "active";
+    }
+</script>
 
 </body>
 </html>

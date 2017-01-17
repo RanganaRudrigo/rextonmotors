@@ -174,7 +174,7 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">
                                                 <label> Default Image
-                                                    <small> image size ( 800px * 800px )</small>
+                                                    <small> image size ( 460px * 460px )</small>
                                                 </label>
                                             </div>
                                             <div class="fileinput-button btn btn-success sepH_b">
@@ -278,7 +278,7 @@
                     <div>
                         <div class="card-box" >
                             <h4 class="header-title m-t-0 m-b-30">More Images
-                                <small> image size ( 800px * 800px )</small>
+                                <small> image size ( 460px * 460px )</small>
                             </h4>
 
                             <div class="row ">
