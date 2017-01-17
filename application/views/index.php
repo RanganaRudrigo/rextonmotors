@@ -163,178 +163,35 @@
                             <!-- Portfolio Gallery Grid -->
                             <div id="grid" class="gallery-isotope grid-4 gutter clearfix">
 
+                                <?php foreach ( $related_products as $related_product): ?>
                                 <!-- Portfolio Item Start -->
                                 <div class="gallery-item wheel">
                                     <div class="work-gallery">
                                         <div class="gallery-thumb">
-                                            <img class="img-fullwidth" alt="" src="<?= base_url('media/images/') ?>products/1.jpg">
+                                            <img class="img-fullwidth" alt="" src="<?=UP.$related_product->Image?>">
                                             <div class="gallery-overlay"></div>
                                             <div class="gallery-contect">
                                                 <ul class="styled-icons icon-bordered icon-circled icon-sm">
-                                                    <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                                    <li><a data-rel="prettyPhoto" href="<?= base_url('media/images/') ?>products/1.jpg"><i class="fa fa-arrows"></i></a></li>
+                                                    <li><a href="<?= base_url().'Product-Details/'.url_title($related_product->ProductTitle).'/'.$related_product->ProductId?>">
+                                                            <i class="fa fa-link"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a data-rel="prettyPhoto" href="<?=UP.$related_product->Image?>">
+                                                            <i class="fa fa-arrows"></i>
+                                                        </a>
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="gallery-bottom-part text-center">
-                                            <h4 class="title text-uppercase font-raleway font-weight-500 m-0">Car Security System</h4>
-                                            <h5 class="sub-title m-0">-Worked By Brand Name -</h5>
+                                            <h4 class="title text-uppercase font-raleway font-weight-500 m-0"><?= $related_product->ProductTitle ?></h4>
+                                         <!--   <h5 class="sub-title m-0">-Worked By Brand Name -</h5>-->
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Portfolio Item End -->
-
-                                <!-- Portfolio Item Start -->
-                                <div class="gallery-item wheel">
-                                    <div class="work-gallery">
-                                        <div class="gallery-thumb">
-                                            <img class="img-fullwidth" alt="" src="<?= base_url('media/images/') ?>products/2.jpg">
-                                            <div class="gallery-overlay"></div>
-                                            <div class="gallery-contect">
-                                                <ul class="styled-icons icon-bordered icon-circled icon-sm">
-                                                    <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                                    <li><a data-rel="prettyPhoto" href="http://placehold.it/280x220"><i class="fa fa-arrows"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="gallery-bottom-part text-center">
-                                            <h4 class="title text-uppercase font-raleway font-weight-500 m-0">Security Alarm</h4>
-                                            <h5 class="sub-title m-0">-Worked By Brand Name -</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Portfolio Item End -->
-
-                                <!-- Portfolio Item Start -->
-                                <div class="gallery-item wheel">
-                                    <div class="work-gallery">
-                                        <div class="gallery-thumb">
-                                            <img class="img-fullwidth" alt="" src="<?= base_url('media/images/') ?>products/3.jpg">
-                                            <div class="gallery-overlay"></div>
-                                            <div class="gallery-contect">
-                                                <ul class="styled-icons icon-bordered icon-circled icon-sm">
-                                                    <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                                    <li><a data-rel="prettyPhoto" href="http://placehold.it/280x220"><i class="fa fa-arrows"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="gallery-bottom-part text-center">
-                                            <h4 class="title text-uppercase font-raleway font-weight-500 m-0">Car Alarm Siren </h4>
-                                            <h5 class="sub-title m-0">-Worked By Brand Name -</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Portfolio Item End -->
-
-                                <!-- Portfolio Item Start -->
-                                <div class="gallery-item oil">
-                                    <div class="work-gallery">
-                                        <div class="gallery-thumb">
-                                            <img class="img-fullwidth" alt="" src="<?= base_url('media/images/') ?>products/4.jpg">
-                                            <div class="gallery-overlay"></div>
-                                            <div class="gallery-contect">
-                                                <ul class="styled-icons icon-bordered icon-circled icon-sm">
-                                                    <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                                    <li><a data-rel="prettyPhoto" href="http://placehold.it/280x220"><i class="fa fa-arrows"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="gallery-bottom-part text-center">
-                                            <h4 class="title text-uppercase font-raleway font-weight-500 m-0">Ultra Secure Direct</h4>
-                                            <h5 class="sub-title m-0">-Worked By Brand Name -</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Portfolio Item End -->
-                                <div class="gallery-item wheel">
-                                    <div class="work-gallery">
-                                        <div class="gallery-thumb">
-                                            <img class="img-fullwidth" alt="" src="<?= base_url('media/images/') ?>products/3.jpg">
-                                            <div class="gallery-overlay"></div>
-                                            <div class="gallery-contect">
-                                                <ul class="styled-icons icon-bordered icon-circled icon-sm">
-                                                    <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                                    <li><a data-rel="prettyPhoto" href="http://placehold.it/280x220"><i class="fa fa-arrows"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="gallery-bottom-part text-center">
-                                            <h4 class="title text-uppercase font-raleway font-weight-500 m-0">Car Alarm Siren </h4>
-                                            <h5 class="sub-title m-0">-Worked By Brand Name -</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Portfolio Item Start -->
-                                <div class="gallery-item wheel">
-                                    <div class="work-gallery">
-                                        <div class="gallery-thumb">
-                                            <img class="img-fullwidth" alt="" src="<?= base_url('media/images/') ?>products/1.jpg">
-                                            <div class="gallery-overlay"></div>
-                                            <div class="gallery-contect">
-                                                <ul class="styled-icons icon-bordered icon-circled icon-sm">
-                                                    <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                                    <li><a data-rel="prettyPhoto" href="<?= base_url('media/images/') ?>products/1.jpg"><i class="fa fa-arrows"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="gallery-bottom-part text-center">
-                                            <h4 class="title text-uppercase font-raleway font-weight-500 m-0">Car Security System</h4>
-                                            <h5 class="sub-title m-0">-Worked By Brand Name -</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Portfolio Item End -->
-                                <!-- Portfolio Item Start -->
-                                <div class="gallery-item wheel">
-                                    <div class="work-gallery">
-                                        <div class="gallery-thumb">
-                                            <img class="img-fullwidth" alt="" src="<?= base_url('media/images/') ?>products/2.jpg">
-                                            <div class="gallery-overlay"></div>
-                                            <div class="gallery-contect">
-                                                <ul class="styled-icons icon-bordered icon-circled icon-sm">
-                                                    <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                                    <li><a data-rel="prettyPhoto" href="http://placehold.it/280x220"><i class="fa fa-arrows"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="gallery-bottom-part text-center">
-                                            <h4 class="title text-uppercase font-raleway font-weight-500 m-0">Security Alarm</h4>
-                                            <h5 class="sub-title m-0">-Worked By Brand Name -</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Portfolio Item End -->
-                                <!-- Portfolio Item Start -->
-                                <!-- Portfolio Item Start -->
-                                <div class="gallery-item wheel">
-                                    <div class="work-gallery">
-                                        <div class="gallery-thumb">
-                                            <img class="img-fullwidth" alt="" src="<?= base_url('media/images/') ?>products/4.jpg">
-                                            <div class="gallery-overlay"></div>
-                                            <div class="gallery-contect">
-                                                <ul class="styled-icons icon-bordered icon-circled icon-sm">
-                                                    <li><a href="#"><i class="fa fa-link"></i></a></li>
-                                                    <li><a data-rel="prettyPhoto" href="<?= base_url('media/images/') ?>products/4.jpg"><i class="fa fa-arrows"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="gallery-bottom-part text-center">
-                                            <h4 class="title text-uppercase font-raleway font-weight-500 m-0">Car Security System</h4>
-                                            <h5 class="sub-title m-0">-By Viper Technologies -</h5>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Portfolio Item End -->
-
-                                <!-- Portfolio Item End -->
-
-
-                                <!-- Portfolio Item Start -->
-
-                                <!-- Portfolio Item End -->
+                                <?php endforeach; ?>
 
 
 

@@ -5,8 +5,8 @@ include_once APPPATH . "modules/admin/core/MY_Controller.php";
 class Brand extends MY_Controller
 {
     var $page = "brand";
-    var $img_width = 870;
-    var $img_height = 240;
+    var $img_width = 200;
+    var $img_height = 120;
 
     function __construct()
     {
