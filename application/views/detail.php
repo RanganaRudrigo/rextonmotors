@@ -2,6 +2,23 @@
 <html dir="ltr" lang="en">
 <head>
     <?php $this->view('inc/header_tag_top'); ?>
+    <link rel="stylesheet" href="<?= base_url('media/css/') ?>eagle.gallery.css" type="text/css" />
+    <script type="text/javascript" src="<?= base_url('media/js/') ?>eagle.gallery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+
+            $('#example2').eagleGallery({
+                miniSliderArrowStyle: 2,
+                theme: 'light'
+            });
+
+
+
+            new WOW().init();
+        });
+    </script>
 </head>
 <body class="boxed-layout pt-20 pb-40 pt-sm-0" data-bg-img="<?= base_url('media/images/') ?>pattern/p13.png">
 <div id="wrapper" class="clearfix">
@@ -40,16 +57,34 @@
                 <div class="section-content">
                     <div class="row">
                         <div class="product">
-                            <div class="col-md-5">
-                                <div class="product-image">
-                                    <div class="zoom-gallery">
-                                        <a href="<?=UP.$details->Image?>" title="<?= $details->ProductTitle ?>">
-                                            <img src="<?=UP.$details->Image?>" alt="">
-                                        </a>
+
+                            <div class="col-md-6">
+
+
+                                <div id="example2" class="eagle-gallery img300">
+
+                                    <div class="owl-carousel">
+
+                                        <img src="<?=UP.$details->Image?>" data-medium-img="<?=UP.$details->Image?>" data-big-img="<?=UP.$details->Image?>" data-title="<?= $details->ProductTitle ?>" alt="" >
+                                        <?php $MoreImage = (array) json_decode($details->MoreImage ); ?>
+                                        <?php foreach ( $MoreImage as $img): ?>
+                                            <img src="<?= UPT. $img ?>" data-medium-img="<?= UP. $img ?>" data-big-img="<?= UP. $img ?>" alt="">
+
+                                        <?php endforeach; ?>
+
                                     </div>
                                 </div>
+
+
+
                             </div>
-                            <div class="col-md-7">
+
+
+
+
+
+
+                            <div class="col-md-6">
                                 <div class="product-summary">
                                     <h2 class="product-title"><?= $details->ProductTitle ?></h2>
 
