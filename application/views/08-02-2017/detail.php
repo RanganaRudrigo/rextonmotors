@@ -19,9 +19,6 @@
             new WOW().init();
         });
     </script>
-    <style>
-        .page-banner {background-image:url('<?= base_url('media/images/contact_us_banner_final.jpg')?>')}
-    </style>
 </head>
 <body class="boxed-layout pt-20 pb-40 pt-sm-0" data-bg-img="<?= base_url('media/images/') ?>pattern/p13.png">
 <div id="wrapper" class="clearfix">
@@ -42,18 +39,18 @@
     <div class="main-content">
 
         <!-- Section: inner-header -->
-        <div class="page-banner">
+        <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="http://placehold.it/1920x1280">
             <div class="container pt-90 pb-50">
                 <!-- Section Content -->
                 <div class="section-content pt-100">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="title text-white">Brands</h3>
+                            <h3 class="title text-white">Product Details</h3>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <section>
             <div class="container">

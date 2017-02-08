@@ -12,6 +12,7 @@ class Home extends Front_Controller
         $this->load->model('Category_model', 'category');
         $this->load->model('Product_model', 'product');
         $this->load->model('Events_model','event');
+        $this->load->model('Brand_model','brand');
 
 
     }
@@ -21,6 +22,7 @@ class Home extends Front_Controller
 
 //
         $d['sliders'] = $this->slider->order_by('Order', 'ASC')->get_all();
+
 //        $d['related_products'] = $this->product->order_by("Order", "ASC")->limit(6)->get_all();
         $d['related_products'] = $this->product->limit(8)->order_by("Order", "ASC")->get_all();
 
@@ -162,7 +164,7 @@ class Home extends Front_Controller
 
             $this->form_validation->set_rules('name', 'Name', 'required');
             $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-            $this->form_validation->set_rules('enquiry', 'Message', 'required');
+            $this->form_validation->set_rules('message', 'Message', 'required');
 //            $this->form_validation->set_rules('form_phone', 'Phone', 'numeric');
             if ($this->form_validation->run()) {
 //                p('02');
@@ -177,8 +179,10 @@ class Home extends Front_Controller
                 $msg .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
                 $msg .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . strip_tags($this->input->post('name')) . "</td></tr>";
                 $msg .= "<tr><td><strong>Email:</strong> </td><td>" . strip_tags($this->input->post('email')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Subject:</strong> </td><td>" . strip_tags($this->input->post('subject')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Phone:</strong> </td><td>" . strip_tags($this->input->post('phone')) . "</td></tr>";
 
-                $msg .= "<tr><td><strong>Comment:</strong> </td><td>" . strip_tags($this->input->post('enquiry')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Comment:</strong> </td><td>" . strip_tags($this->input->post('message')) . "</td></tr>";
                 $msg .= "</table>";
                 $msg .= "</body></html>";
 
@@ -188,11 +192,11 @@ class Home extends Front_Controller
 
                 $this->view('contact_us', $d);
             } else {
-                $d['name'] = $this->input->post('form_name');
-                $d['email'] = $this->input->post('form_email');
-                $d['subject'] = $this->input->post('form_subject');
-                $d['phone'] = $this->input->post('form_phone');
-                $d['comment'] = $this->input->post('form_message');
+                $d['name'] = $this->input->post('name');
+                $d['email'] = $this->input->post('email');
+                $d['subject'] = $this->input->post('subject');
+                $d['phone'] = $this->input->post('phone');
+                $d['comment'] = $this->input->post('message');
 
                 $d['message'] = "<div class='alert alert-danger' style='color: green'>Validation errors occurred....!<br/> Please confirm the fields and submit again.</div>";
                 $this->view('contact_us', $d);
@@ -219,6 +223,12 @@ class Home extends Front_Controller
     {
         $d['datas'] = $this->data->order_by('Order','ASC')->get_all();
         $this->view('databank',$d);
+    }
+
+    public function brand()
+    {
+        $d['brands'] = $this->brand->order_by('Order','ASC')->get_all();
+        $this->view('brands',$d);
     }
     public function foreign_principals()
     {

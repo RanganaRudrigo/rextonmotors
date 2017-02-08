@@ -2,6 +2,9 @@
 <html dir="ltr" lang="en">
 <head>
     <?php $this->view('inc/header_tag_top'); ?>
+    <style>
+        .page-banner {background-image:url('<?= base_url('media/images/contact_us_banner_final.jpg')?>')}
+    </style>
 </head>
 <body class="boxed-layout pt-20 pb-40 pt-sm-0" data-bg-img="<?= base_url('media/images/') ?>pattern/p13.png">
 <div id="wrapper" class="clearfix">
@@ -22,18 +25,18 @@
     <div class="main-content">
 
         <!-- Section: inner-header -->
-        <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="http://placehold.it/1920x1280">
+        <div class="page-banner">
             <div class="container pt-90 pb-50">
                 <!-- Section Content -->
                 <div class="section-content pt-100">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="title text-white">Service Details</h3>
+                            <h3 class="title text-white">Brands</h3>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
         <section>
             <div class="container">

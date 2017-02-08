@@ -33,7 +33,7 @@ class Product extends Front_Controller
 //        p($this->input->get('key'));
 //        p($this->input->get('category_id'));
 
-        if(empty($this->input->get('category_id'))){
+        if($this->input->get('category_id')){
             $this->db->join('category', 'product.CategoryId=category.CategoryID');
             $this->db->select("product.*,category.CategoryTitle");
             $this->db->or_like('CategoryTitle', $this->input->get('key'));
