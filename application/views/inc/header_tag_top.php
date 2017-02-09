@@ -6,7 +6,7 @@
 <meta name="author" content="" />
 
 <!-- Page Title -->
-<title>Rexton motors | Sri Lanka</title>
+<title><?= TITLE ?></title>
 
 <!-- Favicon and Touch Icons -->
 <link href="<?= base_url('media/images/') ?>favicon.png" rel="shortcut icon" type="image/png">

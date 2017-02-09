@@ -694,7 +694,7 @@ section {
 }
 section > .container,
 section > .container-fluid {
-  padding-top: 60px;
+  padding-top: 0px;
   padding-bottom: 60px;
 }
 /* -------- Background Video ---------- */
@@ -3074,6 +3074,7 @@ textarea {
   padding-bottom: 15px;
   position: relative;
   overflow: hidden;
+  top:40px;
 }
 .products .product {
   border: 1px solid #eeeeee;
@@ -4254,8 +4255,8 @@ blockquote p {
   background-position: center center;
 }
 .divider .container {
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding-top: 0px;
+  padding-bottom: 15px;
 }
 .divider .container.small-padding {
   padding-top: 30px;
@@ -4909,8 +4910,10 @@ blockquote p {
  * -----------------------------------------------
 */
 .pagination.theme-colored li.active a {
-  background: #BF9E58;
-  color: #fff;
+  /*background: #BF9E58;*/
+  background: #dc241e ;
+  /*color: #fff;*/
+  color: #000;
   border: 1px solid transparent;
 }
 .pagination.dark li a {

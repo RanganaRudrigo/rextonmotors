@@ -57,7 +57,12 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['About-Us'] = 'Home/about_us';
 $route['Contact-Us'] = 'Home/contact_us';
+
 $route['Brands'] = 'Home/brand';
+$route['Products-Brand/(.+)/(:num)/(:num)'] = 'brand/brand_category/$2';
+$route['Products-Brand/(.+)/(:num)'] = 'brand/brand_category/$2';
+
+
 //$route['Services'] = 'Services/service_index';
 //$route['Package-Details/(.+)/(.+)/(:num)'] = 'Home/package_details/$3';
 //$route['Packages'] = 'Home/packages';
